@@ -7,3 +7,4 @@
 :stylesheet: scss
 :namespace: BlogTutorial
 :migration_format: number
+:admin_renderer: haml

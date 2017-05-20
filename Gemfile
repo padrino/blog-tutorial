@@ -17,6 +17,8 @@ source 'https://rubygems.org'
 gem 'rake'
 
 # Component requirements
+gem 'activesupport', '>= 3.1'
+gem 'bcrypt'
 gem 'sass'
 gem 'haml'
 gem 'sqlite3'
