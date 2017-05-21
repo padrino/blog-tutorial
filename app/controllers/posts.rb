@@ -1,6 +1,6 @@
 BlogTutorial::App.controllers :posts do
   get :index do
-    @posts = Post.reverse_order(:created_at)
+    @posts = Post.reverse_order(:created_at).all
     render 'posts/index'
   end
 

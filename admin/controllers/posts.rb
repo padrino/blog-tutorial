@@ -13,6 +13,8 @@ BlogTutorial::Admin.controllers :posts do
 
   post :create do
     @post = Post.new(params[:post])
+    @post.account = current_account
+
     if (@post.save rescue false)
       @title = pat(:create_title, :model => "post #{@post.id}")
       flash[:success] = pat(:create_success, :model => 'Post')
@@ -78,9 +80,9 @@ BlogTutorial::Admin.controllers :posts do
     end
     ids = params[:post_ids].split(',').map(&:strip)
     posts = Post.where(:id => ids)
-    
+
     if posts.destroy
-    
+
       flash[:success] = pat(:destroy_many_success, :model => 'Posts', :ids => "#{ids.join(', ')}")
     end
     redirect url(:posts, :index)

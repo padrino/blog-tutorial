@@ -1,4 +1,5 @@
 class Account < Sequel::Model
+  one_to_one :post
 
   plugin :validation_helpers
 
