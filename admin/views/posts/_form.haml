@@ -12,9 +12,9 @@
     %span.help-inline=error ? f.error_message_on(:body, :class => 'text-error') : pat(:example)
 - error = @post.errors.key?(:created_ad) && @post.errors[:created_ad].count > 0
 %fieldset.control-group{:class => error ? 'has-error' : ''}
-  =f.label :created_ad, :class => 'control-label'
+  =f.label :created_at, :class => 'control-label'
   .controls
-    =f.text_field :created_ad, :class => 'form-control input-large input-with-feedback'
+    =f.text_field :created_at, :class => 'form-control input-large input-with-feedback'
     %span.help-inline=error ? f.error_message_on(:created_ad, :class => 'text-error') : pat(:example)
 
 .form-actions

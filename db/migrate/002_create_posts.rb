@@ -4,7 +4,7 @@ Sequel.migration do
       primary_key :id
       String :title
       Text :body
-      DateTime :created_ad
+      DateTime :created_at
     end
   end
 

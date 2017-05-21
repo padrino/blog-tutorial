@@ -29,7 +29,7 @@
         %th.header= mat(:post, :id)
         %th.header= mat(:post, :title)
         %th.header= mat(:post, :body)
-        %th.header= mat(:post, :created_ad)
+        %th.header= mat(:post, :created_at)
         %th.header.list-row-action-header
 
     %tbody
@@ -40,7 +40,7 @@
           %td.list-column=post.id
           %td.list-column=post.title
           %td.list-column=post.body
-          %td.list-column=post.created_ad
+          %td.list-column=post.created_at
           %td.list-column.list-row-action
             .list-row-action-wrapper
               =link_to tag_icon(:edit), :href => url(:posts, :edit, :id => post.id), :rel => :tooltip, :title => "#{pat(:edit)} post", :class => 'list-row-action-wrapper-link'
