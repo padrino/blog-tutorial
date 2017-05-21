@@ -4,19 +4,15 @@ Sequel.migration do
     many_to_one :account
   end
 
-  first_account = Account.first
-
   up do
-    if first_account
-      # and assigns a user to all existing posts
-      Post.all.each { |p| p.update(account_id: first_account.id) }
+    first_account_id = from(:accounts).get(:id)
+
+    if first_account_id
+      from(:posts).update(account_id: first_account_id)
     end
   end
 
   down do
-    if first_account
-      # and assigns a user to all existing posts
-      Post.all.each { |p| p.update(account_id: nil) }
-    end
+    from(:posts).update(account_id: nil)
   end
 end
