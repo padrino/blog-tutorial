@@ -21,7 +21,6 @@ gem 'activesupport', '>= 3.1'
 gem 'bcrypt'
 gem 'sass'
 gem 'haml'
-gem 'sqlite3'
 gem 'sequel'
 
 # Test requirements
@@ -39,6 +38,10 @@ gem 'builder'
 # %w(core support gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.14.1.1'
 # end
+
+group :development do
+  gem 'sqlite3'
+end
 
 group :production do
   gem 'pg'
