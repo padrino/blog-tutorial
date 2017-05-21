@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.4'
+ruby '2.4.1'
 
 # Padrino supports Ruby version 1.9 and later
 # ruby '2.4.1'
@@ -16,6 +16,8 @@ ruby '2.3.4'
 
 # Project requirements
 gem 'rake'
+
+gem 'bundle'
 
 # Component requirements
 gem 'activesupport', '>= 3.1'
