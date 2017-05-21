@@ -35,6 +35,7 @@ gem 'padrino', '0.14.1.1'
 # gem 'padrino', :github => 'padrino/padrino-framework'
 
 # Or Individual Gems
+gem 'builder'
 # %w(core support gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.14.1.1'
 # end

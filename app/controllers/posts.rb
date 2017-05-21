@@ -1,5 +1,5 @@
 BlogTutorial::App.controllers :posts do
-  get :index do
+  get :index, :provides => [:html, :rss, :atom] do
     @posts = Post.reverse_order(:created_at).all
     render 'posts/index'
   end
