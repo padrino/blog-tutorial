@@ -35,6 +35,7 @@ module BlogTutorial
     end
 
     access_control.roles_for :admin do |role|
+      role.project_module :posts, '/posts'
       role.project_module :accounts, '/accounts'
     end
 

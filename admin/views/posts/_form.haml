@@ -1,0 +1,25 @@
+- error = @post.errors.key?(:title) && @post.errors[:title].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :title, :class => 'control-label'
+  .controls
+    =f.text_field :title, :class => 'form-control input-large input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:title, :class => 'text-error') : pat(:example)
+- error = @post.errors.key?(:body) && @post.errors[:body].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :body, :class => 'control-label'
+  .controls
+    ~f.text_area :body, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:body, :class => 'text-error') : pat(:example)
+- error = @post.errors.key?(:created_ad) && @post.errors[:created_ad].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :created_ad, :class => 'control-label'
+  .controls
+    =f.text_field :created_ad, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:created_ad, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:posts, :index), :class => 'btn btn-default'
