@@ -39,3 +39,7 @@ gem 'builder'
 # %w(core support gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.14.1.1'
 # end
+
+group :production do
+  gem 'pg'
+end
