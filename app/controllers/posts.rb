@@ -1,11 +1,11 @@
 BlogTutorial::App.controllers :posts do
   get :index do
-    @posts = Post.order('created_at DESC').all
+    @posts = Post.reverse_order(:created_at)
     render 'posts/index'
   end
 
   get :show, :with => :id do
-    @post = Post.find_by_id(params[:id])
+    @post = Post[id: params[:id]]
     render 'posts/show'
   end
 end
