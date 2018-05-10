@@ -5,14 +5,6 @@ module BlogTutorial
     register Padrino::Helpers
     enable :sessions
 
-    get "/" do
-      'Hello World!'
-    end
-
-    get :about, :map => '/about-us' do
-      render :haml, '%p This is a sample blog created to demonstrate how Padrino works!'
-    end
-
     ##
     # Caching support.
     #
@@ -69,5 +61,12 @@ module BlogTutorial
     #     render 'errors/500'
     #   end
     #
+    get "/" do
+      'Hello World!'
+    end
+
+    get :about, :map => '/about-us' do
+      render :haml, '%p This is a sample blog created to demonstrate how Padrino works!'
+    end
   end
 end

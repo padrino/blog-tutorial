@@ -7,3 +7,4 @@ class Post < Sequel::Model
     validates_presence [:title, :body]
   end
 end
+
