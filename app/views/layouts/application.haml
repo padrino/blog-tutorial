@@ -1,24 +1,29 @@
 !!! Strict
 %html
   %head
-    %title
-      = [@title, "Padrino Sample Blog"].compact.join(" | ")
-    = stylesheet_link_tag 'normalize', 'application'
+    %title= "Padrino Sample Blog"
+    = stylesheet_link_tag 'bulma', 'application'
     = javascript_include_tag 'jquery', 'application'
-    = yield_content :include
   %body
-    #header
-      %h1 Sample Padrino Blog
-      %ul.menu
-      %li= link_to 'Blog', url_for(:posts, :index)
-      %li= link_to 'About', url_for(:about)
-    #container
+    %nav.navbar
+      %div.container
+        .navbar-brand
+          %a.navbar-item{:href => "/"}
+            %img{:alt => "Logo of Padrino blog", :src => "http://padrinorb.com/images/logo-6475397a.svg"}/
+          %span.navbar-burger.burger{"data-target" => "navbarMenu"}
+            %span
+            %span
+            %span
+        #navbarMenu.navbar-menu
+          .navbar-end
+            = link_to 'Home', '/', {:class => 'navbar-item'}
+            = link_to 'Blog', url_for(:posts, :index), {:class => 'navbar-item'}
+            = link_to 'About us', url_for(:about), {:class => 'navbar-item'}
+    %section.hero.is-info.is-medium.is-bold
+      .hero-body
+        .container.has-text-centered
+          %h1.title
+            An example blog created with Padrino
+    %div.container
       #main= yield
-      #sidebar
-        %p
-          Space for content
-        %ul.bulleted
-          %li ...
-    #footer
-      Copyright (c) 2009-2018 Padrino
 
