@@ -6,6 +6,8 @@ http://padrinorb.com/guides/getting-started/blog-tutorial/
 
 Feel free to download this application or simply browse the source as a great way to get familiar with Padrino!
 
+The theme comes from the blog template under <https://dansup.github.io/bulma-templates/>.
+
 # Installation
 
 ```
