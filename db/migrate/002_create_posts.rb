@@ -5,6 +5,7 @@ Sequel.migration do
       String :title
       Text :body
       DateTime :created_at
+      DateTime :updated_at
     end
   end
 
