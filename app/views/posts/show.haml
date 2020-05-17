@@ -7,7 +7,7 @@
             %h3.title.article-title= @post.title
             .tags.has-addons.level-item
               %span.tag.is-rounded.is-info= @post.account.email
-              %span.tag.is-rounded= time_ago_in_words(@post.created_at || Time.now) + ' ago'
+              %span.tag.is-rounded= time_ago_in_words(@post.created_at) + ' ago'
         .content.article-body
           = simple_format(@post.body)
           %p= link_to 'View all posts', url_for(:posts, :index)
