@@ -1,7 +1,7 @@
 BlogTutorial::Admin.controllers :posts do
   get :index do
     @title = "Posts"
-    @posts = Post.all
+    @posts = Post.reverse_order(:created_at).all
     render 'posts/index'
   end
 
@@ -14,6 +14,7 @@ BlogTutorial::Admin.controllers :posts do
   post :create do
     @post = Post.new(params[:post])
     @post.account = current_account
+    @post.created_at = Time.now
     if (@post.save rescue false)
       @title = pat(:create_title, :model => "post #{@post.id}")
       flash[:success] = pat(:create_success, :model => 'Post')
@@ -28,6 +29,7 @@ BlogTutorial::Admin.controllers :posts do
   get :edit, :with => :id do
     @title = pat(:edit_title, :model => "post #{params[:id]}")
     @post = Post[params[:id]]
+    @post.updated_at = Time.now
     if @post
       render 'posts/edit'
     else
@@ -39,6 +41,7 @@ BlogTutorial::Admin.controllers :posts do
   put :update, :with => :id do
     @title = pat(:update_title, :model => "post #{params[:id]}")
     @post = Post[params[:id]]
+    @post.updated_at = Time.now
     if @post
       if @post.modified! && @post.update(params[:post])
         flash[:success] = pat(:update_success, :model => 'Post', :id =>  "#{params[:id]}")
